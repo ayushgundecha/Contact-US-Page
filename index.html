@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/tailwind.css">
+    <title>contact</title>
+</head>
+<body class="antialiased ">
+    <div class=" flex  flex-col md:flex-row md:space-x-6 md:space-y-0 w-full min-h-screen justify-center  "> 
+        <div class=" p-8 ">
+           <!-- image Div -->
+           <div class="flex flex-col  space-y-8 justify-between">
+            <h1 class=" font-black text-4xl tracking-wide md:text-6xl  md:font-black ">Contact us</h1>
+            <p class=" font-semibold pt-5 text-sm md:text-lg "> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+
+           </div>
+           <div class=" pt-6 md:max-w-5xl mt-24">
+
+            <img class=" rounded-xl shadow-md " src="images/5127314.jpg" alt="logo">
+
+           </div>
+            
+            
+        </div>
+        <div class=" flex md:w-full md:pr-10 md:pt-7 md:pb-8 md:justify-center md:items-center bg-skyblue ">
+            <!-- form Div -->
+            <div class=" bg-skyblue rounded-xl  p-8 w-full  md:p-10 ">
+                <form  class="flex flex-col space-y-4 " onsubmit="sendEmail(); reset(); return false;">
+                    <div>
+                        <label   for="fullname"> Full Name</label>
+                        <input type="text" 
+                        class=" ring-1 ring-gray-300 w-full rounded-md  px-4 py-2 outline-none focus:ring-2  focus:ring-teal-300">
+
+                    </div>
+                  
+
+                    
+                        <div>
+                            <label  for="email"> EMAIL</label>
+                            <input type="email" 
+                            class=" ring-1 ring-gray-300 w-full rounded-md  px-4 py-2 outline-none focus:ring-2  focus:ring-teal-300">
+    
+                        </div>
+                       <div>
+                        <label  for="message"> MESSAGE</label>
+
+                        <textarea name="" id=""  rows="4" class=" ring-1 ring-gray-300 w-full rounded-md  px-4 py-2 outline-none focus:ring-2  focus:ring-teal-300"></textarea>
+                            
+    
+                        </div>
+
+                       
+                    <button class="bg-indigo-500 rounded-md px-3 mt-2 inline-block py-3 shadow-lg text-white uppercase tracking-wider
+                    font-semibold text-sm hover:bg-indigo-400 hover:-translate-y-0.5 focus:outline-none focus:ring
+                    focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 transition transform" >Send Message</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js" charset="utf-8"></script>
+    <script>
+
+      function sendEmail(){
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "",
+    Password : "",
+    To : 'them@website.com',
+    From : "you@isp.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+      }
+
+    </script>
+
+</body>
+
+</html>
